@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- https://vuejs.org/guide/quick-start.html -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--
+        수업 참고 
+        실행은 live server를 이용하여 실행해주세요 
+        01.step로 태그와 스크립트 구문을 묶어서 라벨링 처리하였습니다.
+        Mount는 중복해서 사용이 가능하여 02 실행 시 01을 주석으로 처리할 필요는 없습니다.        
+    -->
+
+    <!-- 
+        vue.js에서 '{{}}'로 감산 부분을 vue.js 바인딩 문법으로
+        이를 머스타치(Mustache)문법 또는 보간법(Interpolation)이라고 한다.
+        
+        반응성(Reactivity) : Vue에서 데이터를 dom에 바인딩하면 데이터 값이 변경될 때 마다 DOM이 자동으로 업데이트된다.
+                            이는 Vue가 데이터와 Dom을 연결하고 관찰하여 데이터의 변경을 감지하고 자동으로 Dom을 업데이트하는 반응성 시스템을 갖추고 있기 때문이다.
+        데이터 바인딩(Data Binding) : vue에서 데이터와 Dom을 연결하는 매커니즘으로 이를 통해 vue 인스턴스의 데이터를 html 템플릿에 동적으로 렌더링할 수 있다.
+                                    {{}}(Mustache)문법으로 둘러싼 부분은 Vue의 데이터 바인딩을 사용하여 해당 데이터를 html에 표시하는 것을 의미한다.
+        반응성 변수 (Reactive Variables) :Vue.js ref나 reactive()와 같은 함수를 사용하여 반응성 변수를 생성할 수 있다. 
+                                    이러한 반응성 변수는 vue의 반응성 시스템에 의해 관리되며, 변수 값이 변경될 때마다 연결된 htlm요소에 자동으로 반영된다.
+     -->
+    <!-- 01. step  -->
+    <div id="app">{{ message }}</div>
+
+  
+    <script>
+        
+        const { createApp, ref } = Vue
+        // 01. step
+        createApp({
+            setup() {
+                const message = ref('Hello vue!')
+                return {
+                    message
+                }
+            }
+        }).mount('#app')
+
+       
+    </script>
+</body>
+
+</html>
